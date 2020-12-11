@@ -1,0 +1,17 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib BGTriangle.mtl
+g default
+v 0.707107 0.000000 -0.000045
+v -0.707107 0.000000 0.000045
+v -0.000045 0.000000 -0.707107
+vt 0.795565 0.974194
+vt 0.842508 0.927251
+vt 0.842508 0.974194
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+s off
+g BGTriangle
+usemtl initialShadingGroup
+f 2/1/1 1/2/2 3/3/3
