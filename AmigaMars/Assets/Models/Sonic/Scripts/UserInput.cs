@@ -33,7 +33,7 @@ public class UserInput : MonoBehaviour {
 			MoveSpeed -= DecSpeed;
 			if(MoveSpeed < 0f)
 				MoveSpeed = 0f;
-			GetComponent<Animator>().SetFloat("Speed", 0f);
+			GetComponent<Animator>().SetFloat("Speed", Mathf.Lerp(GetComponent<Animator>().GetFloat("Speed"), 0f, IncSpeed));
 			SonicMesh.SetActive(true);
 			BallMesh.SetActive(false);
 		}
@@ -41,7 +41,7 @@ public class UserInput : MonoBehaviour {
 			MoveSpeed += IncSpeed;
 			if(MoveSpeed > MaxMoveSpeed)
 				MoveSpeed = MaxMoveSpeed;
-			GetComponent<Animator>().SetFloat("Speed", 1f);
+			GetComponent<Animator>().SetFloat("Speed", Mathf.Lerp(GetComponent<Animator>().GetFloat("Speed"),1f, IncSpeed));
 			SonicMesh.SetActive(true);
 			BallMesh.SetActive(false);
 		}
@@ -70,12 +70,16 @@ public class UserInput : MonoBehaviour {
 
 		character.Move(move);
 
+		
+	}
+	void Update()
+    {
 		// This will align the player along sloped surfaces
 		if(Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f)) {
 			Vector3 up = hit.normal;
 			Vector3 vel = transform.forward.normalized;
 			Vector3 forward = vel - up * Vector3.Dot(vel, up);
-			transform.rotation = Quaternion.LookRotation(forward.normalized, up);
+			transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward,forward.normalized,0.32f), Vector3.Lerp(transform.up,up,0.32f));
 		}
-	}
+    }
 }
