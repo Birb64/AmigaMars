@@ -1,0 +1,1 @@
+﻿using UnityEngine;public class RespawnDemo:MonoBehaviour{public Vector3 RespawnPoint;void OnTriggerEnter(Collider other){other.gameObject.transform.position=RespawnPoint;}}
