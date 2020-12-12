@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
             GetComponent<UserInput>().BallMesh.SetActive(true);
             GetComponent<UserInput>().BallMesh.transform.Rotate(0, 0, 32, Space.Self);
         }
-        if(Physics.Raycast(transform.position + GroundSensorForward, Vector3.down + GroundSensorForward, out RaycastHit hit, 0.05f + GetComponent<Rigidbody>().velocity.z*100) || Physics.Raycast(transform.position + GroundSensorBackward, Vector3.down + GroundSensorBackward, out RaycastHit hit2, 0.05f + GetComponent<Rigidbody>().velocity.z*100) || Physics.Raycast(transform.position + GroundSensorLeft, Vector3.down + GroundSensorLeft, out RaycastHit hit3, 0.05f + GetComponent<Rigidbody>().velocity.z * 100) || Physics.Raycast(transform.position + GroundSensorRight, Vector3.down + GroundSensorRight, out RaycastHit hit4, 0.05f + GetComponent<Rigidbody>().velocity.z * 100))
+        if(Physics.Raycast(transform.position + GroundSensorForward, Vector3.down + GroundSensorForward, out RaycastHit hit, 0.05f) || Physics.Raycast(transform.position + GroundSensorBackward, Vector3.down + GroundSensorBackward, out RaycastHit hit2, 0.05f) || Physics.Raycast(transform.position + GroundSensorLeft, Vector3.down + GroundSensorLeft, out RaycastHit hit3, 0.05f) || Physics.Raycast(transform.position + GroundSensorRight, Vector3.down + GroundSensorRight, out RaycastHit hit4, 0.05f))
         {
             isGrounded = true;
         }

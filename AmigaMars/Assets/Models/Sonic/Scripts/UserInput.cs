@@ -78,12 +78,16 @@ public class UserInput : MonoBehaviour {
 			if (MoveSpeed > MaxMoveSpeed)
 				MoveSpeed = MaxMoveSpeed;
 		}
-			// This will align the player along sloped surfaces
-			if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f)) {
+		// This will align the player along sloped surfaces
+		if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f)) {
+			float work32 = 0;
 			Vector3 up = hit.normal;
 			Vector3 vel = transform.forward.normalized;
 			Vector3 forward = vel - up * Vector3.Dot(vel, up);
-			transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward,forward.normalized,0.32f), Vector3.Lerp(transform.up,up,0.32f));
+			if (Mathf.Sign(forward.normalized.x) == 1)
+			{ work32 = 0.64f; }
+            else { work32 = 0.32f; }
+			transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward,forward.normalized,work32), Vector3.Lerp(transform.up,up,work32));
 
 		}
 			if(move.magnitude > 1f)
