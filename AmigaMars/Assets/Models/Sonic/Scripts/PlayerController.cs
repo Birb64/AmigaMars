@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public Vector3 GroundSensorLeft;
     public Vector3 GroundSensorRight;
     public bool isGrounded;
+    public static bool isGroundedS;
     Rigidbody rb;
     void Start(){
         rb = GetComponent<Rigidbody>();
@@ -28,12 +29,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update(){
+        isGroundedS = isGrounded;
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         }
+
         if (!isGrounded){
-            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.Lerp(transform.up, Vector3.up, 0.8f));
             GetComponent<UserInput>().SonicMesh.SetActive(false);
             GetComponent<UserInput>().BallMesh.SetActive(true);
             GetComponent<UserInput>().BallMesh.transform.Rotate(0, 0, 32, Space.Self);
