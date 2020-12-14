@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
         jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
     public bool DoubleJump;
-    public Vector3 DoubleJumpModifier;
+    public float DoubleJumpModifier;
     void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Ground" && !Input.GetKey(KeyCode.Space))
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
     }
     bool HasPressedMainJump;
     bool IsJumpable;
-    public bool dontChange;
+    bool dontChange;
     void Update(){
         if(DoubleJump)
         {
@@ -51,28 +51,23 @@ public class PlayerController : MonoBehaviour {
                 if(HasPressedMainJump)
                 {
                     dontChange = true;
-                        rb.AddForce((jump * jumpForce) - DoubleJumpModifier, ForceMode.Impulse);
+                        rb.AddForce((jump * jumpForce) / DoubleJumpModifier, ForceMode.Impulse);
                         GetComponent<AudioSource>().Play();
                     HasPressedMainJump = false;
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && !DoubleJump)
+        if (Input.GetKeyDown(KeyCode.Space) && !DoubleJump && isGrounded)
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
             transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
             GetComponent<AudioSource>().Play();
         }
-        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit5, 0.04f) && Input.GetKey(KeyCode.Space))
-        {
-            isGrounded = true;
-        }
         if (!isGrounded){
             GetComponent<UserInput>().SonicMesh.SetActive(false);
             GetComponent<UserInput>().BallMesh.SetActive(true);
             GetComponent<UserInput>().BallMesh.transform.Rotate(0, 0, 32, Space.Self);
-            
         }
         if(isGrounded)
         {
@@ -81,6 +76,15 @@ public class PlayerController : MonoBehaviour {
             IsJumpable = true;
 
             dontChange = false;
+        }
+        RaycastHit hit;
+        Ray downRay = new Ray(transform.position, -Vector3.up);
+        if (Physics.Raycast(downRay, out hit))
+            { 
+            if (hit.distance < 0.001f && Input.GetKey(KeyCode.Space)) 
+            {
+                isGrounded = true; 
+            } 
         }
     }
 }
