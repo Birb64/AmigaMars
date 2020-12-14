@@ -16,7 +16,7 @@ public class Rings : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == tag)
+        if(other.gameObject.tag == tag && !HasActivated)
         other.gameObject.GetComponent<RingManager>().rings += Amount;
         HasActivated = true;
         GetComponent<AudioSource>().Play();

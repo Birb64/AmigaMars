@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
                 if (IsJumpable && isGrounded)
                 {
                     IsJumpable = false;
-                    rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+                    rb.velocity += jump * jumpForce;
                     isGrounded = false;
                     dontChange = false;
                     transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour {
                 if(HasPressedMainJump)
                 {
                     dontChange = true;
-                        rb.AddForce((jump * jumpForce) / DoubleJumpModifier, ForceMode.Impulse);
+                    rb.velocity += (jump * jumpForce) / DoubleJumpModifier;
                         GetComponent<AudioSource>().Play();
                     HasPressedMainJump = false;
                 }
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space) && !DoubleJump && isGrounded)
         {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            rb.velocity += jump * jumpForce;
             isGrounded = false;
             transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
             GetComponent<AudioSource>().Play();
