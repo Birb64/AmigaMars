@@ -32,8 +32,77 @@ TextureImporter:
   - first:
       213: -8404486899812015165
     second: RingGet2
+  - first:
+      213: -8185881345681966442
+    second: Sonic_Mars_HUD_0
+  - first:
+      213: -3995990077313205651
+    second: Sonic_Mars_HUD_3
+  - first:
+      213: -3846461202191264198
+    second: Sonic_Mars_HUD_4
+  - first:
+      213: -4041721083098070394
+    second: Sonic_Mars_HUD_5
+  - first:
+      213: -1873037650718024298
+    second: Sonic_Mars_HUD_6
+  - first:
+      213: -4917223218311010141
+    second: Sonic_Mars_HUD_7
+  - first:
+      213: 4192832281516446240
+    second: Sonic_Mars_HUD_8
+  - first:
+      213: -6503351554744848824
+    second: Sonic_Mars_HUD_9
+  - first:
+      213: 777838013293234264
+    second: Sonic_Mars_HUD_10
+  - first:
+      213: 3754370203178073305
+    second: Sonic_Mars_HUD_11
+  - first:
+      213: -4507320330550513508
+    second: Sonic_Mars_HUD_12
+  - first:
+      213: 461352603707693153
+    second: Sonic_Mars_HUD_13
+  - first:
+      213: 560765540583311040
+    second: Sonic_Mars_HUD_14
+  - first:
+      213: -2358201177310475703
+    second: Sonic_Mars_HUD_15
+  - first:
+      213: 3315639549875224261
+    second: Sonic_Mars_HUD_16
+  - first:
+      213: 9038735225972459060
+    second: Sonic_Mars_HUD_17
+  - first:
+      213: 5296846715920891666
+    second: Sonic_Mars_HUD_18
+  - first:
+      213: -2417110358177662722
+    second: Sonic_Mars_HUD_19
+  - first:
+      213: 488924499334250293
+    second: Sonic_Mars_HUD_20
+  - first:
+      213: -3044903033359954757
+    second: Sonic_Mars_HUD_21
+  - first:
+      213: 4785145493196516206
+    second: Sonic_Mars_HUD_22
+  - first:
+      213: -8487997284659229501
+    second: Sonic_Mars_HUD_23
+  - first:
+      213: 3710274346151590712
+    second: Sonic_Mars_HUD_24
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -53,6 +122,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -87,6 +157,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -307,7 +379,7 @@ TextureImporter:
         width: 7
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,6 +387,510 @@ TextureImporter:
       bones: []
       spriteID: 3c3e74981b34d5b80800000000000000
       internalID: -8404486899812015165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 75
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89c9a7381d8da100800000000000000
+      internalID: 120907900161477005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 75
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0173b93b5b8e52b0800000000000000
+      internalID: -5593880463221231350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 75
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ab2c342346b88c0800000000000000
+      internalID: -3995990077313205651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_4
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 75
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3651118aef9e9ac0800000000000000
+      internalID: -3846461202191264198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_5
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 75
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6828bb0c61ce8e7c0800000000000000
+      internalID: -4041721083098070394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 61
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d15023e22a106e0800000000000000
+      internalID: -1873037650718024298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 61
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8e447198382cbb0800000000000000
+      internalID: -4917223218311010141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_8
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 61
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0221496debeef2a30800000000000000
+      internalID: 4192832281516446240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_9
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 61
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ee2f997347fb5a0800000000000000
+      internalID: -6503351554744848824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_10
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 61
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858832b4d8f6bca00800000000000000
+      internalID: 777838013293234264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_11
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 223
+        width: 14
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc7dbbeec33a1430800000000000000
+      internalID: 3754370203178073305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 76
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90f3a84a08c271c0800000000000000
+      internalID: -4507320330550513508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 61
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168d23cafbd076600800000000000000
+      internalID: 461352603707693153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 91
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c68fb0c94d38c700800000000000000
+      internalID: 560765540583311040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 106
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a4085068cf54fd0800000000000000
+      internalID: -2358201177310475703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 151
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce7c858a94830e20800000000000000
+      internalID: 3315639549875224261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 136
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43606ea7cc9007d70800000000000000
+      internalID: 9038735225972459060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 121
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fb824360e228940800000000000000
+      internalID: 5296846715920891666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 166
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef837e58fe2b47ed0800000000000000
+      internalID: -2417110358177662722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 181
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fbdc0ed3209c600800000000000000
+      internalID: 488924499334250293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 196
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc0211e2d45eb5d0800000000000000
+      internalID: -3044903033359954757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 211
+        width: 172
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b2a882970486240800000000000000
+      internalID: 4785145493196516206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 297
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc0861e073943a80800000000000000
+      internalID: -8487997284659229501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sonic_Mars_HUD_24
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 97
+        width: 31
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b3c952cda8d7330800000000000000
+      internalID: 3710274346151590712
       vertices: []
       indices: 
       edges: []
