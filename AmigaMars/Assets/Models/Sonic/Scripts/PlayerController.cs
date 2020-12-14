@@ -19,13 +19,18 @@ public class PlayerController : MonoBehaviour {
         {
             isGrounded = true;
         }
+        if(other.gameObject.tag == "Loop" && isGrounded) { rb.useGravity = false; }
+        if (other.gameObject.tag == "Loop" && !isGrounded) { rb.useGravity = true; }
+        Debug.Log(other.gameObject.tag);
     }
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Ground")
         {
             isGrounded = false;
+            transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         }
+        if (other.gameObject.tag == "Loop") { rb.useGravity = true; }
     }
     bool HasPressedMainJump;
     bool IsJumpable;
@@ -45,7 +50,7 @@ public class PlayerController : MonoBehaviour {
                     rb.velocity += jump * jumpForce;
                     isGrounded = false;
                     dontChange = false;
-                    transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+                    
                     GetComponent<AudioSource>().Play();
                     GetComponent<AudioSource>().pitch = 1f;
                 }

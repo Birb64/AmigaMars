@@ -92,7 +92,7 @@ public class UserInput : MonoBehaviour {
 
 
 		// This will align the player along sloped surfaces
-		if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f)) {
+		if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 0.05f)) {
 			Vector3 up = hit.normal;
 			Vector3 vel = transform.forward;
 			Vector3 forward = vel - up * Vector3.Dot(vel, up);
@@ -103,6 +103,10 @@ public class UserInput : MonoBehaviour {
 			{
 				transform.position += new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100);
 			}
+            else 
+					{ transform.position -= new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100); }
+			
 		}
+
     }
 }
