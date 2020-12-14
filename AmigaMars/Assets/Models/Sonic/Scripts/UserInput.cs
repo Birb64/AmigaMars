@@ -83,14 +83,14 @@ public class UserInput : MonoBehaviour {
 			GetComponent<Animator>().SetFloat("Speed", Mathf.Lerp(GetComponent<Animator>().GetFloat("Speed"), 1f, IncSpeed));
 			
 		}
-
 		
 
 
 
-		
 
-		
+
+
+
 		// This will align the player along sloped surfaces
 		if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f)) {
 			Vector3 up = hit.normal;
@@ -99,8 +99,10 @@ public class UserInput : MonoBehaviour {
 			if (Mathf.Sign(forward.x) * Mathf.Sign(GetComponent<Rigidbody>().velocity.x) == 1)
 			{ transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.64f), Vector3.Lerp(transform.up, up, 0.64f)); }
             else { transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.32f), Vector3.Lerp(transform.up, up, 0.32f)); }
-			
-
+			if (axis < 0.2 && axis2 < 0.2 && axis > -0.2 && axis2 > -0.2 && !Input.GetKey(KeyCode.Space))
+			{
+				transform.position += new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100);
+			}
 		}
     }
 }

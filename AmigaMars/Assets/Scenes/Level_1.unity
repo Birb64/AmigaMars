@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 436327831}
   m_Layer: 0
   m_Name: Level
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967294
@@ -3458,6 +3458,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6576840296109240099, guid: 5b4d5074e859e7c46ab4c0359b6d403d,
+        type: 3}
+      propertyPath: DoubleJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576840296109240099, guid: 5b4d5074e859e7c46ab4c0359b6d403d,
+        type: 3}
+      propertyPath: DoubleJumpModifier.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6576840296109240120, guid: 5b4d5074e859e7c46ab4c0359b6d403d,
         type: 3}
       propertyPath: m_Name

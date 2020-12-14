@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 6576840296109240124}
   - component: {fileID: 6576840296109240099}
   - component: {fileID: 1347920636226114082}
+  - component: {fileID: 2088149658373261817}
   m_Layer: 0
   m_Name: SonicPlayerEntity
   m_TagString: Untagged
@@ -251,7 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: {x: 0, y: 2.03, z: 0}
   jumpForce: 1.01
-  isGrounded: 0
+  isGrounded: 1
+  DoubleJump: 0
 --- !u!82 &1347920636226114082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -348,6 +350,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2088149658373261817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6576840296109240120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0.015}
 --- !u!1 &6576840296740225779
 GameObject:
   m_ObjectHideFlags: 0
