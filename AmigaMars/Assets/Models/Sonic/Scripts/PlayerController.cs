@@ -13,7 +13,11 @@ public class PlayerController : MonoBehaviour {
         jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
-    
+    void OnCollisionExit()
+    {
+        if (Input.GetKey(KeyCode.Space) && !Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f))
+            isGrounded = false;
+    }
     void OnCollisionStay()
     {
         if(!Input.GetKey(KeyCode.Space) && Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 0.05f))

@@ -724,3 +724,7 @@ AmigaMars/Temp/UnityTempFile-84d802786fd5dec4aba30e042d211f24
 AmigaMars/Temp/UnityTempFile-8d2e0dca9c22c16468aff3e9e5738f79
 AmigaMars/Temp/UnityTempFile-8e4c59111d23baa47ab2ec1f76afd3eb
 *.dwlt
+AmigaMars/Library/ArtifactDB
+*.dwlt
+*.txt
+AmigaMars/Library/SourceAssetDB
