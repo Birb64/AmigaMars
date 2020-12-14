@@ -47,12 +47,14 @@ public class PlayerController : MonoBehaviour {
                     dontChange = false;
                     transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
                     GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().pitch = 1f;
                 }
                 if(HasPressedMainJump)
                 {
                     dontChange = true;
-                    rb.velocity += (jump * jumpForce) / DoubleJumpModifier;
+                    rb.velocity += (jump * jumpForce) - new Vector3(0,DoubleJumpModifier,0);
                         GetComponent<AudioSource>().Play();
+                    GetComponent<AudioSource>().pitch = 1.1f;
                     HasPressedMainJump = false;
                 }
             }
@@ -77,14 +79,6 @@ public class PlayerController : MonoBehaviour {
 
             dontChange = false;
         }
-        RaycastHit hit;
-        Ray downRay = new Ray(transform.position, -Vector3.up);
-        if (Physics.Raycast(downRay, out hit))
-            { 
-            if (hit.distance < 0.001f && Input.GetKey(KeyCode.Space)) 
-            {
-                isGrounded = true; 
-            } 
         }
     }
-}
+

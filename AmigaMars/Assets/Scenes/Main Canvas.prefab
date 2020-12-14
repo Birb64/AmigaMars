@@ -340,14 +340,14 @@ RectTransform:
   m_GameObject: {fileID: 3617193172911357017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.02, z: 1}
   m_Children: []
   m_Father: {fileID: 3617193174288726754}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08800001, y: 0.339}
   m_AnchorMax: {x: 0.144, y: 0.572}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.3999939, y: -0.10000038}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3617193172911357014
@@ -494,6 +494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3617193173987868494}
   - component: {fileID: 3617193173987868495}
+  - component: {fileID: 441947894402651277}
   - component: {fileID: 3617193173987868496}
   - component: {fileID: 3617193173987868497}
   m_Layer: 5
@@ -547,6 +548,34 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &441947894402651277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617193173987868498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46bf4e7f010f57479e1abf80e9c541d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Columns:
+  - {fileID: 1969973466597252036}
+  - {fileID: 3236508454425030549}
+  - {fileID: 483325663834429362}
+  - {fileID: 7481723480341807745}
+  Sprites:
+  - {fileID: 120907900161477005, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -5593880463221231350, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -3995990077313205651, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -3846461202191264198, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -4041721083098070394, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -1873037650718024298, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -4917223218311010141, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: 4192832281516446240, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: -6503351554744848824, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
+  - {fileID: 777838013293234264, guid: 6dcdf0833c055b6489ca2ecb79d67829, type: 3}
 --- !u!114 &3617193173987868496
 MonoBehaviour:
   m_ObjectHideFlags: 0

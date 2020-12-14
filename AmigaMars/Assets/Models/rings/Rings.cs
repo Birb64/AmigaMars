@@ -13,12 +13,15 @@ public class Rings : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transform.Rotate(0, 5, 0, Space.Self);
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == tag && !HasActivated)
-        other.gameObject.GetComponent<RingManager>().rings += Amount;
-        HasActivated = true;
-        GetComponent<AudioSource>().Play();
+        if (other.gameObject.tag == tag && !HasActivated)
+        {
+            other.gameObject.GetComponent<RingManager>().rings += Amount;
+            HasActivated = true;
+            GetComponent<AudioSource>().Play();
+        }
     }
 }
