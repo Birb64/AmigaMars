@@ -9,13 +9,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int Timing = (int)Time.time;
-        int Timing2 = (int)(Time.time * 10 % 10);
-        int Timing3 = (int)(Time.time * 100 % 10);
-        Columns[0].sprite = Sprites[Timing / 10];
-        Columns[1].sprite = Sprites[Timing % 10];
-        Columns[2].sprite = Sprites[Timing2];
-        Columns[3].sprite = Sprites[Timing3];
+        int Timing = (int)(Time.time * 1000);
+        Columns[0].sprite = Sprites[(Timing / 10000) % 10];
+        Columns[1].sprite = Sprites[(Timing / 1000) % 10];
+        Columns[2].sprite = Sprites[(Timing / 100) % 10];
+        Columns[3].sprite = Sprites[(Timing / 10) % 10];
 
     }
 }

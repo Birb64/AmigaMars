@@ -10,31 +10,48 @@ public class PlayerMove : MonoBehaviour {
 
 	private Vector3 moveInput;
 
-	public void Move(Vector3 move) {
-		if(move.magnitude > 1f) {
-			move.Normalize();
+	public void Move(Vector3 move)
+	{
+		if (!PlayerController.IsLooped)
+		{
+			if (move.magnitude > 1f)
+			{
+				move.Normalize();
+			}
+			moveInput = move;
+			ConvertMoveInput();
+			ApplyExtraTurnRotation();
 		}
-		moveInput = move;
-		ConvertMoveInput();
-		ApplyExtraTurnRotation();
 	}
 
-	private void ConvertMoveInput() {
-		Vector3 vector = transform.InverseTransformDirection(moveInput);
-		turnAmount = Mathf.Atan2(vector.x, vector.z);
-		forwardAmount = vector.z;
+	private void ConvertMoveInput()
+	{
+		if (!PlayerController.IsLooped)
+		{
+			Vector3 vector = transform.InverseTransformDirection(moveInput);
+			turnAmount = Mathf.Atan2(vector.x, vector.z);
+			forwardAmount = vector.z;
+		}
 	}
 
-	private void ApplyExtraTurnRotation() {
-		float num = Mathf.Lerp(stationaryTurnSpeed, movingTurnSpeed, forwardAmount);
-		transform.Rotate(0f, turnAmount * num * Time.deltaTime, 0f);
+	private void ApplyExtraTurnRotation()
+	{
+		if (!PlayerController.IsLooped)
+		{
+			float num = Mathf.Lerp(stationaryTurnSpeed, movingTurnSpeed, forwardAmount);
+			transform.Rotate(0f, turnAmount * num * Time.deltaTime, 0f);
+		}
 	}
 
 	private void OnAnimatorMove() {
-		if(Time.deltaTime > 0f) {
-			Vector3 velocity = GetComponent<Animator>().deltaPosition * moveSpeedMultiplier / Time.deltaTime;
-			velocity.y = GetComponent<Rigidbody>().velocity.y;
-			GetComponent<Rigidbody>().velocity = velocity;
+		if (!PlayerController.IsLooped)
+		{
+			if (Time.deltaTime > 0f)
+			{
+				Vector3 velocity = GetComponent<Animator>().deltaPosition * moveSpeedMultiplier / Time.deltaTime;
+				velocity.y = GetComponent<Rigidbody>().velocity.y;
+				GetComponent<Rigidbody>().velocity = velocity;
+			}
 		}
 	}
 }

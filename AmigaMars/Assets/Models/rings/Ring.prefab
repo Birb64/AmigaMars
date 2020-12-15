@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5e8981642c82943929f38a7f2ed1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 1
+  RingAmount: 1
+  ScoreAmount: 10
   tag: Player
 --- !u!65 &2395854995334803158
 BoxCollider:

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Rings : MonoBehaviour
 {
-    public int Amount;
+    public int RingAmount;
+    public int ScoreAmount;
     public string tag;
     bool HasActivated;
     void Update()
@@ -19,7 +20,8 @@ public class Rings : MonoBehaviour
     {
         if (other.gameObject.tag == tag && !HasActivated)
         {
-            other.gameObject.GetComponent<RingManager>().rings += Amount;
+            other.gameObject.GetComponent<RingManager>().rings += RingAmount;
+            other.gameObject.GetComponent<ScoreManager>().score += ScoreAmount;
             HasActivated = true;
             GetComponent<AudioSource>().Play();
         }

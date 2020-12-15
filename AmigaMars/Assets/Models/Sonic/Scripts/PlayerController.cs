@@ -13,14 +13,15 @@ public class PlayerController : MonoBehaviour {
     }
     public bool DoubleJump;
     public float DoubleJumpModifier;
+    public static bool IsLooped;
     void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Ground" && !Input.GetKey(KeyCode.Space))
         {
             isGrounded = true;
         }
-        if(other.gameObject.tag == "Loop" && isGrounded) { rb.useGravity = false; }
-        if (other.gameObject.tag == "Loop" && !isGrounded) { rb.useGravity = true; }
+        if(other.gameObject.tag == "Loop" && isGrounded) { rb.useGravity = false; IsLooped = true; }
+        if (other.gameObject.tag == "Loop" && !isGrounded) { rb.useGravity = true; IsLooped = false; }
         Debug.Log(other.gameObject.tag);
     }
     void OnTriggerExit(Collider other)
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour {
             isGrounded = false;
             transform.rotation = transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         }
-        if (other.gameObject.tag == "Loop") { rb.useGravity = true; }
+        if (other.gameObject.tag == "Loop") { rb.useGravity = true; IsLooped = false; }
     }
     bool HasPressedMainJump;
     bool IsJumpable;

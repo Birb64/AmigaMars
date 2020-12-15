@@ -45,7 +45,7 @@ public class UserInput : MonoBehaviour {
 			camForward = Vector3.Scale(cam.forward, new Vector3(1f, 0f, 1f)).normalized;
 			move = axis2 * camForward + axis * cam.right;
 		}
-		else
+		else if(!PlayerController.IsLooped)
 		{
 			move = axis2 * Vector3.forward + axis * Vector3.right;
 		}
@@ -56,11 +56,17 @@ public class UserInput : MonoBehaviour {
 			if (MoveSpeed < 0f)
 				MoveSpeed = 0f;
 		}
-		else
+		if(IsMoving)
 		{
 			MoveSpeed += IncSpeed;
 			if (MoveSpeed > MaxMoveSpeed)
 				MoveSpeed = MaxMoveSpeed;
+		}
+        if (PlayerController.IsLooped)
+        {
+			
+			transform.Rotate(0, axis, 0, Space.Self);
+			//transform.Translate(Vector3.right * axis * Time.deltaTime);
 		}
 		if (move.magnitude > 1f)
 		
@@ -97,7 +103,7 @@ public class UserInput : MonoBehaviour {
 			Vector3 vel = transform.forward;
 			Vector3 forward = vel - up * Vector3.Dot(vel, up);
 			if (Mathf.Sign(forward.x) * Mathf.Sign(GetComponent<Rigidbody>().velocity.x) == 1)
-			{ transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.64f), Vector3.Lerp(transform.up, up, 0.64f)); }
+			{ transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.48f), Vector3.Lerp(transform.up, up, 0.48f)); }
             else { transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.32f), Vector3.Lerp(transform.up, up, 0.32f)); }
 			if (axis < 0.2 && axis2 < 0.2 && axis > -0.2 && axis2 > -0.2 && !Input.GetKey(KeyCode.Space))
 			{
