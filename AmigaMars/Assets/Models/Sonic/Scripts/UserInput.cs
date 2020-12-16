@@ -30,15 +30,33 @@ public class UserInput : MonoBehaviour {
 	void FixedUpdate() {
 		axis = Input.GetAxis("Horizontal");
 		axis2 = Input.GetAxis("Vertical");
-		if (axis >= 0.2 || axis2 >= 0.2 || axis <= -0.2 || axis2 <= -0.2)
+		if (!PlayerController.IsLooped)
 		{
-			MaxMoveSpeed = MaximumSpeed;
-			IsMoving = true;
-		}
-		else
+			if (axis >= 0.2 || axis2 >= 0.2 || axis <= -0.2 || axis2 <= -0.2)
+			{
+				MaxMoveSpeed = MaximumSpeed;
+				IsMoving = true;
+			}
+			else
+			{
+				MaxMoveSpeed = 0f;
+				IsMoving = false;
+			}
+		}if (PlayerController.IsLooped)
 		{
-			MaxMoveSpeed = 0f;
-			IsMoving = false;
+			if (axis2 >= 0.2 || axis2 <= -0.2)
+			{
+				MaxMoveSpeed = MaximumSpeed;
+				IsMoving = true;
+			}
+			if (axis2 < 0.2 && axis2 > -0.2)
+			{
+				if (axis >= 0.2 || axis <= -0.2)
+				{
+					MaxMoveSpeed = 0f;
+					IsMoving = false;
+				}
+			}
 		}
 		if (cam != null)
 		{

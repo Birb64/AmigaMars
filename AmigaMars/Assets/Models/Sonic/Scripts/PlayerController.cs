@@ -49,7 +49,6 @@ public class PlayerController : MonoBehaviour {
                 {
                     IsJumpable = false;
                     rb.velocity += jump * jumpForce;
-                    isGrounded = false;
                     dontChange = false;
                     
                     GetComponent<AudioSource>().Play();
@@ -64,6 +63,14 @@ public class PlayerController : MonoBehaviour {
                     HasPressedMainJump = false;
                 }
             }
+        }
+       if(rb.velocity.y > 0 && Input.GetKey(KeyCode.Space))
+        {
+            isGrounded = false;
+        }
+       if(Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 0.05f) && Input.GetKey(KeyCode.Space) && rb.velocity.y < 0)
+        {
+            isGrounded = true;
         }
         if (Input.GetKeyDown(KeyCode.Space) && !DoubleJump && isGrounded)
         {
