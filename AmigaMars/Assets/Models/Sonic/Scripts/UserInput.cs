@@ -7,6 +7,7 @@ public class UserInput : MonoBehaviour {
 
 	private float MoveSpeed;
 	private float MaxMoveSpeed;
+	float momentumSpeed;
 
 	private bool IsMoving;
 
@@ -27,7 +28,10 @@ public class UserInput : MonoBehaviour {
 
 		float axis;
 		float axis2;
-	void FixedUpdate() {
+
+	public bool HasMomentum;
+
+    void FixedUpdate() {
 		axis = Input.GetAxis("Horizontal");
 		axis2 = Input.GetAxis("Vertical");
 		if (!PlayerController.IsLooped)
@@ -42,12 +46,18 @@ public class UserInput : MonoBehaviour {
 				MaxMoveSpeed = 0f;
 				IsMoving = false;
 			}
-		}if (PlayerController.IsLooped)
+		}
+		if (PlayerController.IsLooped)
 		{
 			if (axis2 >= 0.2 || axis2 <= -0.2)
 			{
 				MaxMoveSpeed = MaximumSpeed;
 				IsMoving = true;
+			}
+			else
+            {
+				MaxMoveSpeed = 0f;
+				IsMoving = false;
 			}
 			if (axis2 < 0.2 && axis2 > -0.2)
 			{
@@ -67,18 +77,39 @@ public class UserInput : MonoBehaviour {
 		{
 			move = axis2 * Vector3.forward + axis * Vector3.right;
 		}
-
-		if (!IsMoving)
+		if (!HasMomentum)
 		{
-			MoveSpeed -= DecSpeed;
-			if (MoveSpeed < 0f)
-				MoveSpeed = 0f;
+			if (!IsMoving)
+			{
+				MoveSpeed -= DecSpeed;
+				if (MoveSpeed < 0f)
+					MoveSpeed = 0f;
+			}
+			if (IsMoving)
+			{
+				MoveSpeed += IncSpeed;
+				if (MoveSpeed > MaxMoveSpeed)
+					MoveSpeed = MaxMoveSpeed;
+			}
 		}
-		if(IsMoving)
-		{
-			MoveSpeed += IncSpeed;
-			if (MoveSpeed > MaxMoveSpeed)
-				MoveSpeed = MaxMoveSpeed;
+		if(HasMomentum)
+        {
+			
+			
+			if (!IsMoving)
+			{
+				MoveSpeed -= momentumSpeed;
+				momentumSpeed -= DecSpeed;
+				if (momentumSpeed < MoveSpeed / 10)
+					momentumSpeed = MoveSpeed / 10;
+			}
+			if (IsMoving)
+			{
+				MoveSpeed = Mathf.Lerp(MoveSpeed, MoveSpeed + momentumSpeed, 0.32f) + 0.032f;
+				momentumSpeed = Mathf.Lerp(momentumSpeed, momentumSpeed + IncSpeed, 0.032f) * Time.deltaTime;
+				if (momentumSpeed > MaxMoveSpeed)
+					momentumSpeed = MaxMoveSpeed;
+			}
 		}
         if (PlayerController.IsLooped)
         {
@@ -121,14 +152,14 @@ public class UserInput : MonoBehaviour {
 			Vector3 vel = transform.forward;
 			Vector3 forward = vel - up * Vector3.Dot(vel, up);
 			if (Mathf.Sign(forward.x) * Mathf.Sign(GetComponent<Rigidbody>().velocity.x) == 1)
-			{ transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.48f), Vector3.Lerp(transform.up, up, 0.48f)); }
-            else { transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.32f), Vector3.Lerp(transform.up, up, 0.32f)); }
+			{ transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.48f) * Time.deltaTime, Vector3.Lerp(transform.up, up, 0.48f) * Time.deltaTime); }
+            else { transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.forward, forward.normalized, 0.32f) * Time.deltaTime, Vector3.Lerp(transform.up, up, 0.32f) * Time.deltaTime); }
 			if (axis < 0.2 && axis2 < 0.2 && axis > -0.2 && axis2 > -0.2 && !Input.GetKey(KeyCode.Space))
 			{
-				transform.position += new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100);
+				transform.position += new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100) * Time.deltaTime;
 			}
             else 
-					{ transform.position -= new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100); }
+					{ transform.position -= new Vector3(-Vector3.up.x / 100 - -up.x / 100, -Vector3.up.y / 100 - -up.y / 100, -Vector3.up.z / 100 - -up.z / 100) * Time.deltaTime; }
 			
 		}
 

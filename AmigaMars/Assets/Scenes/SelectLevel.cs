@@ -23,6 +23,7 @@ public class SelectLevel : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetButtonDown("Cancel")) { SceneManager.LoadScene(0); }
         Level1Showoff.Rotate(0, 0, 0.32f, Space.Self);
         Level2Showoff.Rotate(0, 0.32f, 0, Space.Self);
         if(Input.GetAxis("Horizontal") >= 0.2 && Input.GetButtonDown("Horizontal") && !DeactivateControls)
@@ -76,11 +77,11 @@ public class SelectLevel : MonoBehaviour
         {
             if (dontGoTooHigh == 0)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(2);
             }
             if (dontGoTooHigh == 1)
             {
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(3);
             }
         }
     }

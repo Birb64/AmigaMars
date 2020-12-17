@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //Temporary
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour {
     public Vector3 jump;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     public static bool IsLooped;
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Ground" && !Input.GetKey(KeyCode.Space))
+        if(other.gameObject.tag == "Ground" && !Input.GetButton("Jump"))
         {
             isGrounded = true;
         }
@@ -37,9 +38,10 @@ public class PlayerController : MonoBehaviour {
     bool IsJumpable;
     bool dontChange;
     void Update(){
+        if (Input.GetButtonDown("Cancel")) { SceneManager.LoadScene(1); }//Temporary
         if(DoubleJump)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Jump"))
             {
                 if(!IsJumpable && !dontChange)
                 {
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
-       if(rb.velocity.y > 0 && Input.GetKey(KeyCode.Space))
+       if(rb.velocity.y > 0 && Input.GetButton("Jump"))
         {
             isGrounded = false;
         }
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour {
         {
             isGrounded = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && !DoubleJump && isGrounded)
+        if (Input.GetButtonDown("Jump") && !DoubleJump && isGrounded)
         {
             rb.velocity += jump * jumpForce;
             isGrounded = false;

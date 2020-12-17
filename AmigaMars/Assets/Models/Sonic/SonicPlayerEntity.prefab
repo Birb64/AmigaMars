@@ -258,6 +258,7 @@ MonoBehaviour:
   MaximumSpeed: 1
   SonicMesh: {fileID: 2910535308054060077}
   BallMesh: {fileID: 2910535307673159043}
+  HasMomentum: 0
 --- !u!114 &6576840296109240124
 MonoBehaviour:
   m_ObjectHideFlags: 0
