@@ -1014,11 +1014,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.079823814
       objectReference: {fileID: 0}
+    - target: {fileID: -2784311128158294143, guid: a4b04cb0019274f4a93b36333615b53b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f6da18b1b966cd4cb0672666e698cdd, type: 2}
+    - target: {fileID: -1212445537685685361, guid: a4b04cb0019274f4a93b36333615b53b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a51edb6faf80774eaa4ee1c7741b431, type: 2}
     - target: {fileID: -927199367670048503, guid: a4b04cb0019274f4a93b36333615b53b,
         type: 3}
       propertyPath: m_Name
       value: sonic_mars_ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8304545770963488453, guid: a4b04cb0019274f4a93b36333615b53b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f6da18b1b966cd4cb0672666e698cdd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b04cb0019274f4a93b36333615b53b, type: 3}
 --- !u!1 &2910535307673159043 stripped
